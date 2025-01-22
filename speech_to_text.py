@@ -4,14 +4,19 @@ def speech_to_text_and_save():
     print("Select a language:")
     print("1. Thai")
     print("2. English")
-    language_choice = input("Enter 1 for Thai or 2 for English: ")
+    print("3. Chinese")
+    print("4. Japanese")
+    language_choice = input("Enter 1 for Thai, 2 for English, 3 for Chinese, or 4 for Japanese: ")
 
-    if language_choice == "1":
-        language_code = "th-TH"
-        language_name = "Thai"
-    elif language_choice == "2":
-        language_code = "en-US"
-        language_name = "English"
+    languages = {
+        "1": ("th-TH", "Thai"),
+        "2": ("en-US", "English"),
+        "3": ("zh-CN", "Chinese"),
+        "4": ("ja-JP", "Japanese")
+    }
+
+    if language_choice in languages:
+        language_code, language_name = languages[language_choice]
     else:
         print("Invalid choice. Exiting.")
         return
@@ -29,12 +34,12 @@ def speech_to_text_and_save():
             try:
                 print("Converting speech to text...")
                 text = recognizer.recognize_google(audio_data, language=language_code)
-                print(f"Text ({language_name}): {text}")
+                print(f"Text ({language_name}): {text}")  
 
                 file.write(f"Text ({language_name}):\n{text}\n")
 
             except sr.UnknownValueError:
-                print("Could not understand the audio")
+                print("Could not understand the audio.")
             except sr.RequestError as e:
                 print(f"Error connecting to Google API: {e}")
 
