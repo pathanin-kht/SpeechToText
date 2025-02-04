@@ -1,30 +1,25 @@
-# Speech-to-Text and Save
-
+# Speech to Text v1.1.0
 ## Overview
-This project allows users to convert speech into text and save the result in a `.txt` file. The user can choose between Thai and English for the speech recognition process. The project uses the `speech_recognition` library and Google's Speech Recognition API to convert the speech to text and saves it in a file for further use.
+This project allows users to convert speech into text and save the result in a `.txt` file. The project uses the `speech_recognition` library and Google's Speech Recognition API to convert the speech to text and saves it in a file for further use.
 
 ## Features
-- Users can select a language for speech recognition, either Thai or English.
-- Users speak into the microphone to record their speech.
-- The program processes the audio and converts it into text.
-- The transcribed text is displayed on the console for immediate feedback.
-- The transcribed text is saved to a `.txt` file named according to the selected language.
-- After each transcription, users can choose to continue recording or exit the program.
-
-## Example
-- The user speaks into the microphone, and the application converts the speech to text and displays the result.
-- The text is saved to a file named `output_thai.txt` or `output_english.txt` depending on the language selected.
-- After each transcription, the user can choose to continue ('y') or stop ('n').
-- For example, speaking "ได้ยินฉันไหมฉันเป็นคนไทย" will save:
+- Supports speech recognition in Thai, English, Chinese, and Japanese.
+- Converts speech to text and displays it on the console.
+- Saves transcribed text to a `.txt` file based on the selected language.
+- After each transcription, users can continue ('y') or exit ('n').
   
-  ```bash
-  Text (Thai):
-  ได้ยินฉันไหมฉันเป็นคนไทย
-- If the user stops, the session ends and the text is saved in the file.
+## Example
+- The user selects a language (Thai, English, Chinese, or Japanese).
+- The user speaks, and the app converts and displays the text.
+- The text is saved to `output_thai.txt`, `output_english.txt`, `output_chinese.txt`, or `output_japanese.txt`.
+- Example: Speaking "ได้ยินฉันไหมฉันเป็นคนไทย" saves to output_thai.txt.
 
 ### Installation
 1. Clone or download the repository.
-2. Install the required dependencies:
+   ```bash
+   git clone https://github.com/pathanin-kht/SpeechToText.git
+
+3. Install the required dependencies:
    
    ```bash
    pip install -r requirements.txt
